@@ -1,0 +1,2 @@
+This Repo is to Impelement the functions given to us as a task to learn Functional progrmaming Paradigm in general and Haskell in particular.
+It implements the functions: Map, Filter, foldL, foldR, Count, Compose.
