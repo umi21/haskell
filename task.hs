@@ -21,18 +21,40 @@ _filter p (x:xs)
 
 
 {-
-    3. foldL : 
+    3. foldL : left fold is a function that takes a function, an accumulator, and a list
+        and returns a number. It processes the list from left to right by applying the function
+        on each element of the list and storing it on the accumulator.
 -}
 
-{-
-    4. foldR : 
--}
-
-{-
-    5. count : 
--}
+foldL :: (b -> a -> b) -> b -> [a] -> b
+foldL _ acc [] = acc
+foldL f acc (x:xs) = foldL f (f acc x) xs
 
 
 {-
-    6. compose : 
+    4. foldR : right fold is a function that takes a function, an accumulator, and a list
+        and returns a number. It processes the list from right to left by applying the function
+        on each element of the list and storing it on the accumulator.
 -}
+
+foldR :: (a -> b -> b) -> b -> [a] -> b
+foldR _ acc [] = acc
+foldR f acc (x:xs) = f x (foldR f acc xs)
+
+
+{-
+    5. count : this function takes a predicate and a list and counts the elements that
+        that satisfy the predicate.
+-}
+
+count :: (a -> Bool) -> [a] -> Int
+count p xs = length (_filter p xs)
+
+
+{-
+    6. compose : this function composes two functions, applying the second function to its
+        argument and then applying the first function to the result of the second.
+-}
+
+compose :: (b -> c) -> (a -> b) -> a -> c
+compose f g = \x -> f (g x)
