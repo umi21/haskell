@@ -3,7 +3,28 @@
     producing a new list.
 -}
 
-map :: (a -> b) -> [a] -> [b]
-map _ [] = []
-map f (x:xs) = f x : map f xs
+_map :: (a -> b) -> [a] -> [b]
+_map _ [] = []
+_map f (x:xs) = f x : _map f xs
 
+
+{-
+    2. filter : 
+-}
+
+{-
+    3. foldL : 
+-}
+
+{-
+    4. foldR : 
+-}
+
+{-
+    5. count : 
+-}
+
+
+{-
+    6. compose : 
+-}
