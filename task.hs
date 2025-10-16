@@ -48,7 +48,7 @@ foldR f acc (x:xs) = f x (foldR f acc xs)
 -}
 
 count :: a -> [a] -> Int
-count a xs = [x | x<-xs, x==a]
+count b xs = [x | x<-xs, x==b]
 
 
 {-
