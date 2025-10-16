@@ -43,12 +43,12 @@ foldR f acc (x:xs) = f x (foldR f acc xs)
 
 
 {-
-    5. count : this function takes a predicate and a list and counts the elements that
-        that satisfy the predicate.
+    5. count : this function takes an element and a list and counts the occurance of the 
+        element.
 -}
 
-count :: (a -> Bool) -> [a] -> Int
-count p xs = length (_filter p xs)
+count :: a -> [a] -> Int
+count a xs = [x | x<-xs, x==a]
 
 
 {-
